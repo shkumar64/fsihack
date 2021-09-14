@@ -1,105 +1,50 @@
-# Azure Cognitive Search UI
+# AI-Powered Insurance Claims Automation
 
-This sample is a React template for [Azure Cognitive Search](https://docs.microsoft.com/en-us/azure/search/search-what-is-azure-search). It leverages the [Azure SDK for Javascript/Typescript](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/search/search-documents/) and [Azure Static Web Apps](https://aka.ms/swadocs) to make it easy to get up and running with a simple web application.
+Handling Claims processing through an intelligent agent with cognitive skills to handle image, ID, and documents with goal to reduce claims processing time and manual effort in end-to-end claims processing for better customer experience 
 
-You can view the resulting web application here: [https://victorious-beach-0ab88b51e.azurestaticapps.net/](https://victorious-beach-0ab88b51e.azurestaticapps.net/)
-
-![Screenshot of sample web app](./images/web-app.png)
-
-You can easily deploy the sample onto Azure or run it locally by following the steps below.
-
-## Running the application locally
-
-To run the sample locally, follow the steps below.
-
-### Prerequisites
-
-- A GitHub account
-- [Node.js and Git](https://nodejs.org/)
-- [Visual Studio Code](https://code.visualstudio.com/?WT.mc_id=shopathome-github-jopapa) installed
-- The [Azure Functions extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions&WT.mc_id=shopathome-github-jopapa) installed
-- The [Azure Functions Core Tools](https://docs.microsoft.com/azure/azure-functions/functions-run-local?WT.mc_id=shopathome-github-jopapa) installed
-
-### Setup
-
-1. Clone (or Fork and Clone) this repository
-
-1. Rename the `api/local.settings.json.rename` file to `api/local.settings.json`.
-
-The `local.settings.json` file holds all of the keys that the application needs.
-
-For this sample, there is a search index using the [goodbooks-10k dataset](https://github.com/zygmuntz/goodbooks-10k) that that is publicly available using the connection information below. The index consists of 10,000 popular books that we'll search over in our application.
-
-```json
-{
-  "IsEncrypted": false,
-  "Values": {
-    "AzureWebJobsStorage": "",
-    "FUNCTIONS_WORKER_RUNTIME": "node",
-    "SearchApiKey": "03097125077C18172260E41153975439",
-    "SearchServiceName": "azs-playground",
-    "SearchIndexName": "good-books",
-    "SearchFacets": "authors*,language_code"
-  }
-}
-```
-
-## Run the app locally
-
-This project can be run anywhere, but VS Code is required for local debugging.
-
-1. Open the application with VS Code.
-
-### Running the front-end
-
-1. Install front-end dependencies...
-
-   ```bash
-   npm install
-   ```
-
-1. Run the front-end project in the browser (automatically opens a browser window).
-
-   ```bash
-   npm start
-   ```
-
-### Running the API
-
-1. From VS Code, press <kbd>F5</kbd>
+The solution will showcase Azure platform’s machine learning capability to recognize document type, extract required fields and push data to downstream applications, significantly reducing manual efforts and creating smoother customer experience.
 
 
-## Deploying this sample
 
-### Prerequisites
 
-- A GitHub account
-- An Azure subscription
+## Architecture
+![Architecture Diagram](/images/architecture.jpg)
+## Process-Flow
+* Customer uses voice activated intelligent agent to file a new claim via the Chat bots
+* Customer uploads the claim related document (taking pictures or uploading the images from the library) via the bot (Driving License, Insurance Card, Service Estimate, Damage of the Windshield)
+* In the backend, the data is uploaded to **Azure Storage Services**
+* The logic app will process the uploaded documents and images from the blob storage
+* Logic app will
+  * Extract the metadata from out of the box model related documents (like ID and Invoices)
+  * Extract the metadata from the custom models (like insurance card)
+  * Data will be persisted and stored into data store(cosmos Db)
+* Cognitive Search Indexer will trigger index the documents
+* Custom UI provides the search capability into indexed document repository in Azure Search
+## Deployment
 
-### Forking the repo
-
-To start off, select **Use this template** above. This will create your own copy of the code that you can deploy and edit as you please.
-
-![Use this template screenshot](./images/use-template.png)
-
-### Creating the web app
-
-Next, you need to create a Static Web App in the Azure portal. Click the button below to create one:
-
-[![Deploy to Azure button](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/?feature.customportal=false#create/Microsoft.StaticApp)
-
-This will walk you through the process of creating the web app and connecting it to your GitHub repo.
-
-After connecting to the repo, you'll be asked to include some build details. Set the Build Presets to `React` and then leave the other default values:
-
-![Azure Static Web Apps Configuration Screenshot](./images/setup.png)
-
-Once you create the static web app, it will automatically deploy the web app to a URL you can find within the portal.
-
-![Azure Static Web Apps Configuration Screenshot](./images/static-web.png)
-
-The last thing you need to do is select configuration and then edit the application settings to add the credentials from `local.settings.json`. It may take a few minutes for this blade to become available in the portal.
-
-![Azure Static Web Apps Configuration Screenshot](./images/config.png)
-
-Additional documentation can be found in the [docs folder](./docs).
+### Step0 - Before you start (Pre-requisites)
+These are the key pre-requisites to deploy this solution:
+1. You need a Microsoft Azure account to create the services used in this solution. You can create a [free account](https://azure.microsoft.com/en-us/free/), use your MSDN account, or any other subscription where you have permission to create Azure services.
+2.	PowerShell: The one-command deployment process uses PowerShell to execute all the required activities to get the solution up and running. If you don't have PowerShell, install it from [here](https://docs.microsoft.com/en-us/powershell/scripting/install/installing-windows-powershell?view=powershell-6). Direct link to [MSI download](https://github.com/PowerShell/PowerShell/releases/download/v6.2.3/PowerShell-6.2.3-win-x64.msi). If you have an older version of Power Shell you will have to update to the latest version.
+3.	Request access to Form recognizer.  Form Recognizer is available in a limited-access preview. To get access to the preview, fill out and submit the Form Recognizer [access request form](https://aka.ms/FormRecognizerRequestAccess). Once you have access, you can [create](https://portal.azure.com/?microsoft_azure_marketplace_ItemHideKey=microsoft_azure_cognitiveservices_formUnderstandingPreview#create/Microsoft.CognitiveServicesFormRecognizer) the form recognizer service
+## List of Artifacts Deployed
+* API Connection
+  * Azure Blob
+* App Services
+  * Blob operations
+  * CosmosDb
+  * Form Recognizer
+  * Luis
+  * Web API & Web App(UI)
+* App Service Plan
+* Application Insight
+* Cognitive Services
+  * All-in-one Cognitive Services
+  * Custom Vision Training & Prediction
+  * Form Recognizer
+  * Luis Authoring
+* Logic Apps
+* Azure Search
+* Storage Account
+  * Storage for Forms
+  * Storage for Training

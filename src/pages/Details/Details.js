@@ -19,6 +19,7 @@ export default function Details() {
     axios.get('/api/lookup?id=' + id)
       .then(response => {
         const doc = response.data.document;
+        console.log(doc)
         setDocument(doc);
         setIsLoading(false);
       })
