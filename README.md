@@ -8,7 +8,7 @@ The solution will showcase Azure platform’s machine learning capability to rec
 
 
 ## Architecture
-![Architecture Diagram](/images/architecture.jpg)
+![Architecture Diagram](/images/architecture.JPG)
 ## Process-Flow
 * Customer uses voice activated intelligent agent to file a new claim via the Chat bots
 * Customer uploads the claim related document (taking pictures or uploading the images from the library) via the bot (Driving License, Insurance Card, Service Estimate, Damage of the Windshield)
