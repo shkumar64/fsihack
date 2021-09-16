@@ -77,7 +77,7 @@ module.exports = async function (context, req) {
 
         // Sending the search request
         const searchResults = await client.search(q, searchOptions);
-
+        console.log(searchResults)
         // Getting results for output
         const output = [];
         for await (const result of searchResults.results) {

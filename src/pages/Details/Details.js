@@ -39,16 +39,35 @@ export default function Details() {
     // View result
     if (selectedTab === 0) {
       resultStyle += " active";
-      detailsBody = (
-        <div className="card-body">
-          <h5 className="card-title">{document.original_title}</h5>
-          <img className="image" src={document.image_url} alt="Book cover"></img>
-          <p className="card-text">{document.authors?.join('; ')} - {document.original_publication_year}</p>
-          <p className="card-text">ISBN {document.isbn}</p>
-          <Rating name="half-rating-read" value={parseInt(document.average_rating)} precision={0.1} readOnly></Rating>
-          <p className="card-text">{document.ratings_count} Ratings</p>
-        </div>
-      );
+      if (document.formtype === 'Insurance') {
+        detailsBody = (
+          <div className="card-body">
+            <h5 className="card-title">{document.Company}</h5>
+            <p className="card-text">{document.Insured} - {document.PolicyNumber}</p>
+            <p className="card-text">Make {document.Make} - Model {document.Model} - Year {document.Year}</p>
+            <p className="card-text">{document.VIN}</p>
+            <p className="card-text">{document.State} State</p>
+          </div>
+        );
+      } else if (document.formtype === 'Driving License') {
+        detailsBody = (
+          <div className="card-body">
+            <h5 className="card-title">{document.FirstName} {document.LastName}</h5>
+            <p className="card-text">Document Number - {document.DocumentNumber}</p>
+            <p className="card-text">Date of Expiration {document.DateOfExpiration} - DOB {document.DateOfBirth}</p>
+            <p className="card-text">Address - {document.Address}</p>
+          </div>
+        );
+      } else {
+        detailsBody = (
+          <div className="card-body">
+            <h5 className="card-title">{document.CustomerName} {document.LastName}</h5>
+            <p className="card-text">InvoiceID - {document.InvoiceId} Date - {document.InvoiceDate}</p>
+            <p className="card-text">Total {document.InvoiceTotal} - Tax {document.TotalTax}</p>
+            <p className="card-text">Vendor - {document.VendorName} Address - {document.VendorAddress}</p>
+          </div>
+        );
+      }
     }
 
     // View raw data
