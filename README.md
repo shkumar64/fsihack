@@ -1,4 +1,4 @@
-# AI-Powered Insurance Claims Automation
+# Automated Document Ingestion
 
 Handling Claims processing through an intelligent agent with cognitive skills to handle image, ID, and documents with goal to reduce claims processing time and manual effort in end-to-end claims processing for better customer experience 
 
