@@ -5,6 +5,9 @@
         "databaseAccounts_cosmos478816_createMode": {
             "type": "SecureString"
         },
+        "subscription_id": {
+            "type": "String"
+        },
         "sites_app478816_name": {
             "defaultValue": "app478816",
             "type": "String"
@@ -341,12 +344,12 @@
                     "description": "Microsoft Azure Storage provides a massively scalable, durable, and highly available storage for data on the cloud, and serves as the data storage solution for modern applications. Connect to Blob Storage to perform various operations such as create, update, get and delete on blobs in your Azure Storage account.",
                     "iconUri": "[concat('https://connectoricons-prod.azureedge.net/releases/v1.0.1531/1.0.1531.2596/', parameters('connections_azureblob_name'), '/icon.png')]",
                     "brandColor": "#804998",
-                    "id": "[concat('/subscriptions/a4a18cdf-4006-44b4-855d-6cb58f8ae486/providers/Microsoft.Web/locations/westus/managedApis/', parameters('connections_azureblob_name'))]",
+                    "id": "[concat('/subscriptions/parameters('subscription_id')/providers/Microsoft.Web/locations/westus/managedApis/', parameters('connections_azureblob_name'))]",
                     "type": "Microsoft.Web/locations/managedApis"
                 },
                 "testLinks": [
                     {
-                        "requestUri": "[concat('https://management.azure.com:443/subscriptions/a4a18cdf-4006-44b4-855d-6cb58f8ae486/resourceGroups/FSIUC2-478816/providers/Microsoft.Web/connections/', parameters('connections_azureblob_name'), '/extensions/proxy/testconnection?api-version=2016-06-01')]",
+                        "requestUri": "[concat('https://management.azure.com:443/subscriptions/parameters('subscription_id')/resourceGroups/FSIUC2-478816/providers/Microsoft.Web/connections/', parameters('connections_azureblob_name'), '/extensions/proxy/testconnection?api-version=2016-06-01')]",
                         "method": "get"
                     }
                 ]
@@ -381,12 +384,12 @@
                     "description": "Microsoft Azure Storage provides a massively scalable, durable, and highly available storage for data on the cloud, and serves as the data storage solution for modern applications. Connect to Blob Storage to perform various operations such as create, update, get and delete on blobs in your Azure Storage account.",
                     "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1531/1.0.1531.2596/azureblob/icon.png",
                     "brandColor": "#804998",
-                    "id": "/subscriptions/a4a18cdf-4006-44b4-855d-6cb58f8ae486/providers/Microsoft.Web/locations/westus/managedApis/azureblob",
+                    "id": "/subscriptions/parameters('subscription_id')/providers/Microsoft.Web/locations/westus/managedApis/azureblob",
                     "type": "Microsoft.Web/locations/managedApis"
                 },
                 "testLinks": [
                     {
-                        "requestUri": "[concat('https://management.azure.com:443/subscriptions/a4a18cdf-4006-44b4-855d-6cb58f8ae486/resourceGroups/FSIUC2-478816/providers/Microsoft.Web/connections/', parameters('connections_azureblob_1_name'), '/extensions/proxy/testconnection?api-version=2016-06-01')]",
+                        "requestUri": "[concat('https://management.azure.com:443/subscriptions/parameters('subscription_id')/resourceGroups/FSIUC2-478816/providers/Microsoft.Web/connections/', parameters('connections_azureblob_1_name'), '/extensions/proxy/testconnection?api-version=2016-06-01')]",
                         "method": "get"
                     }
                 ]
@@ -421,12 +424,12 @@
                     "description": "Microsoft Azure Storage provides a massively scalable, durable, and highly available storage for data on the cloud, and serves as the data storage solution for modern applications. Connect to Blob Storage to perform various operations such as create, update, get and delete on blobs in your Azure Storage account.",
                     "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1531/1.0.1531.2596/azureblob/icon.png",
                     "brandColor": "#804998",
-                    "id": "/subscriptions/a4a18cdf-4006-44b4-855d-6cb58f8ae486/providers/Microsoft.Web/locations/westus/managedApis/azureblob",
+                    "id": "/subscriptions/parameters('subscription_id')/providers/Microsoft.Web/locations/westus/managedApis/azureblob",
                     "type": "Microsoft.Web/locations/managedApis"
                 },
                 "testLinks": [
                     {
-                        "requestUri": "[concat('https://management.azure.com:443/subscriptions/a4a18cdf-4006-44b4-855d-6cb58f8ae486/resourceGroups/FSIUC2-478816/providers/Microsoft.Web/connections/', parameters('connections_azureblob_2_name'), '/extensions/proxy/testconnection?api-version=2016-06-01')]",
+                        "requestUri": "[concat('https://management.azure.com:443/subscriptions/parameters('subscription_id')/resourceGroups/FSIUC2-478816/providers/Microsoft.Web/connections/', parameters('connections_azureblob_2_name'), '/extensions/proxy/testconnection?api-version=2016-06-01')]",
                         "method": "get"
                     }
                 ]
@@ -461,12 +464,12 @@
                     "description": "Microsoft Azure Storage provides a massively scalable, durable, and highly available storage for data on the cloud, and serves as the data storage solution for modern applications. Connect to Blob Storage to perform various operations such as create, update, get and delete on blobs in your Azure Storage account.",
                     "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1531/1.0.1531.2596/azureblob/icon.png",
                     "brandColor": "#804998",
-                    "id": "/subscriptions/a4a18cdf-4006-44b4-855d-6cb58f8ae486/providers/Microsoft.Web/locations/westus/managedApis/azureblob",
+                    "id": "/subscriptions/parameters('subscription_id')/providers/Microsoft.Web/locations/westus/managedApis/azureblob",
                     "type": "Microsoft.Web/locations/managedApis"
                 },
                 "testLinks": [
                     {
-                        "requestUri": "[concat('https://management.azure.com:443/subscriptions/a4a18cdf-4006-44b4-855d-6cb58f8ae486/resourceGroups/FSIUC2-478816/providers/Microsoft.Web/connections/', parameters('connections_azureblob_3_name'), '/extensions/proxy/testconnection?api-version=2016-06-01')]",
+                        "requestUri": "[concat('https://management.azure.com:443/subscriptions/parameters('subscription_id')/resourceGroups/FSIUC2-478816/providers/Microsoft.Web/connections/', parameters('connections_azureblob_3_name'), '/extensions/proxy/testconnection?api-version=2016-06-01')]",
                         "method": "get"
                     }
                 ]
@@ -501,12 +504,12 @@
                     "description": "Microsoft Azure Storage provides a massively scalable, durable, and highly available storage for data on the cloud, and serves as the data storage solution for modern applications. Connect to Blob Storage to perform various operations such as create, update, get and delete on blobs in your Azure Storage account.",
                     "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1531/1.0.1531.2596/azureblob/icon.png",
                     "brandColor": "#804998",
-                    "id": "/subscriptions/a4a18cdf-4006-44b4-855d-6cb58f8ae486/providers/Microsoft.Web/locations/westus/managedApis/azureblob",
+                    "id": "/subscriptions/parameters('subscription_id')/providers/Microsoft.Web/locations/westus/managedApis/azureblob",
                     "type": "Microsoft.Web/locations/managedApis"
                 },
                 "testLinks": [
                     {
-                        "requestUri": "[concat('https://management.azure.com:443/subscriptions/a4a18cdf-4006-44b4-855d-6cb58f8ae486/resourceGroups/FSIUC2-478816/providers/Microsoft.Web/connections/', parameters('connections_azureblob_4_name'), '/extensions/proxy/testconnection?api-version=2016-06-01')]",
+                        "requestUri": "[concat('https://management.azure.com:443/subscriptions/parameters('subscription_id')/resourceGroups/FSIUC2-478816/providers/Microsoft.Web/connections/', parameters('connections_azureblob_4_name'), '/extensions/proxy/testconnection?api-version=2016-06-01')]",
                         "method": "get"
                     }
                 ]
@@ -541,12 +544,12 @@
                     "description": "Microsoft Azure Storage provides a massively scalable, durable, and highly available storage for data on the cloud, and serves as the data storage solution for modern applications. Connect to Blob Storage to perform various operations such as create, update, get and delete on blobs in your Azure Storage account.",
                     "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1531/1.0.1531.2596/azureblob/icon.png",
                     "brandColor": "#804998",
-                    "id": "/subscriptions/a4a18cdf-4006-44b4-855d-6cb58f8ae486/providers/Microsoft.Web/locations/westus/managedApis/azureblob",
+                    "id": "/subscriptions/parameters('subscription_id')/providers/Microsoft.Web/locations/westus/managedApis/azureblob",
                     "type": "Microsoft.Web/locations/managedApis"
                 },
                 "testLinks": [
                     {
-                        "requestUri": "[concat('https://management.azure.com:443/subscriptions/a4a18cdf-4006-44b4-855d-6cb58f8ae486/resourceGroups/FSIUC2-478816/providers/Microsoft.Web/connections/', parameters('connections_azureblob_5_name'), '/extensions/proxy/testconnection?api-version=2016-06-01')]",
+                        "requestUri": "[concat('https://management.azure.com:443/subscriptions/parameters('subscription_id')/resourceGroups/FSIUC2-478816/providers/Microsoft.Web/connections/', parameters('connections_azureblob_5_name'), '/extensions/proxy/testconnection?api-version=2016-06-01')]",
                         "method": "get"
                     }
                 ]
@@ -582,7 +585,7 @@
                     "description": "Azure Custom Vision Service is a Microsoft Cognitive Services product for tagging images using your custom computer vision model.",
                     "iconUri": "[concat('https://connectoricons-prod.azureedge.net/releases/v1.0.1481/1.0.1481.2460/', parameters('connections_cognitiveservicescustomvision_name'), '/icon.png')]",
                     "brandColor": "#1267AE",
-                    "id": "[concat('/subscriptions/a4a18cdf-4006-44b4-855d-6cb58f8ae486/providers/Microsoft.Web/locations/westus/managedApis/', parameters('connections_cognitiveservicescustomvision_name'))]",
+                    "id": "[concat('/subscriptions/parameters('subscription_id')/providers/Microsoft.Web/locations/westus/managedApis/', parameters('connections_cognitiveservicescustomvision_name'))]",
                     "type": "Microsoft.Web/locations/managedApis"
                 },
                 "testLinks": []
@@ -620,7 +623,7 @@
                     "description": "Azure Custom Vision Service is a Microsoft Cognitive Services product for tagging images using your custom computer vision model.",
                     "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1481/1.0.1481.2460/cognitiveservicescustomvision/icon.png",
                     "brandColor": "#1267AE",
-                    "id": "/subscriptions/a4a18cdf-4006-44b4-855d-6cb58f8ae486/providers/Microsoft.Web/locations/westus/managedApis/cognitiveservicescustomvision",
+                    "id": "/subscriptions/parameters('subscription_id')/providers/Microsoft.Web/locations/westus/managedApis/cognitiveservicescustomvision",
                     "type": "Microsoft.Web/locations/managedApis"
                 },
                 "testLinks": []
@@ -658,7 +661,7 @@
                     "description": "Azure Custom Vision Service is a Microsoft Cognitive Services product for tagging images using your custom computer vision model.",
                     "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1481/1.0.1481.2460/cognitiveservicescustomvision/icon.png",
                     "brandColor": "#1267AE",
-                    "id": "/subscriptions/a4a18cdf-4006-44b4-855d-6cb58f8ae486/providers/Microsoft.Web/locations/westus/managedApis/cognitiveservicescustomvision",
+                    "id": "/subscriptions/parameters('subscription_id')/providers/Microsoft.Web/locations/westus/managedApis/cognitiveservicescustomvision",
                     "type": "Microsoft.Web/locations/managedApis"
                 },
                 "testLinks": []
@@ -693,12 +696,12 @@
                     "description": "Azure Cosmos DB is a globally distributed multi-model database service designed to enable you to elastically and independently scale throughput and storage across any number of geographical regions with a comprehensive SLA.",
                     "iconUri": "[concat('https://connectoricons-prod.azureedge.net/releases/v1.0.1530/1.0.1530.2592/', parameters('connections_documentdb_name'), '/icon.png')]",
                     "brandColor": "#1C3A56",
-                    "id": "[concat('/subscriptions/a4a18cdf-4006-44b4-855d-6cb58f8ae486/providers/Microsoft.Web/locations/westus/managedApis/', parameters('connections_documentdb_name'))]",
+                    "id": "[concat('/subscriptions/parameters('subscription_id')/providers/Microsoft.Web/locations/westus/managedApis/', parameters('connections_documentdb_name'))]",
                     "type": "Microsoft.Web/locations/managedApis"
                 },
                 "testLinks": [
                     {
-                        "requestUri": "[concat('https://management.azure.com:443/subscriptions/a4a18cdf-4006-44b4-855d-6cb58f8ae486/resourceGroups/FSIUC2-478816/providers/Microsoft.Web/connections/', parameters('connections_documentdb_name'), '/extensions/proxy/testConnection?api-version=2016-06-01')]",
+                        "requestUri": "[concat('https://management.azure.com:443/subscriptions/parameters('subscription_id')/resourceGroups/FSIUC2-478816/providers/Microsoft.Web/connections/', parameters('connections_documentdb_name'), '/extensions/proxy/testConnection?api-version=2016-06-01')]",
                         "method": "get"
                     }
                 ]
@@ -733,12 +736,12 @@
                     "description": "Azure Cosmos DB is a globally distributed multi-model database service designed to enable you to elastically and independently scale throughput and storage across any number of geographical regions with a comprehensive SLA.",
                     "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1530/1.0.1530.2592/documentdb/icon.png",
                     "brandColor": "#1C3A56",
-                    "id": "/subscriptions/a4a18cdf-4006-44b4-855d-6cb58f8ae486/providers/Microsoft.Web/locations/westus/managedApis/documentdb",
+                    "id": "/subscriptions/parameters('subscription_id')/providers/Microsoft.Web/locations/westus/managedApis/documentdb",
                     "type": "Microsoft.Web/locations/managedApis"
                 },
                 "testLinks": [
                     {
-                        "requestUri": "[concat('https://management.azure.com:443/subscriptions/a4a18cdf-4006-44b4-855d-6cb58f8ae486/resourceGroups/FSIUC2-478816/providers/Microsoft.Web/connections/', parameters('connections_documentdb_1_name'), '/extensions/proxy/testConnection?api-version=2016-06-01')]",
+                        "requestUri": "[concat('https://management.azure.com:443/subscriptions/parameters('subscription_id')/resourceGroups/FSIUC2-478816/providers/Microsoft.Web/connections/', parameters('connections_documentdb_1_name'), '/extensions/proxy/testConnection?api-version=2016-06-01')]",
                         "method": "get"
                     }
                 ]
@@ -776,7 +779,7 @@
                     "description": "Extracts information from forms and images into structured data based on pre-trained models or model created by a set of representative training forms.",
                     "iconUri": "[concat('https://connectoricons-prod.azureedge.net/releases/v1.0.1528/1.0.1528.2589/', parameters('connections_formrecognizer_name'), '/icon.png')]",
                     "brandColor": "#0063B1",
-                    "id": "[concat('/subscriptions/a4a18cdf-4006-44b4-855d-6cb58f8ae486/providers/Microsoft.Web/locations/westus/managedApis/', parameters('connections_formrecognizer_name'))]",
+                    "id": "[concat('/subscriptions/parameters('subscription_id')/providers/Microsoft.Web/locations/westus/managedApis/', parameters('connections_formrecognizer_name'))]",
                     "type": "Microsoft.Web/locations/managedApis"
                 },
                 "testLinks": []
@@ -3991,22 +3994,22 @@
                             "azureblob_2": {
                                 "connectionId": "[resourceId('Microsoft.Web/connections', parameters('connections_azureblob_5_name'))]",
                                 "connectionName": "azureblob-5",
-                                "id": "/subscriptions/a4a18cdf-4006-44b4-855d-6cb58f8ae486/providers/Microsoft.Web/locations/westus/managedApis/azureblob"
+                                "id": "/subscriptions/parameters('subscription_id')/providers/Microsoft.Web/locations/westus/managedApis/azureblob"
                             },
                             "cognitiveservicescustomvision": {
                                 "connectionId": "[resourceId('Microsoft.Web/connections', parameters('connections_cognitiveservicescustomvision_2_name'))]",
                                 "connectionName": "cognitiveservicescustomvision-2",
-                                "id": "/subscriptions/a4a18cdf-4006-44b4-855d-6cb58f8ae486/providers/Microsoft.Web/locations/westus/managedApis/cognitiveservicescustomvision"
+                                "id": "/subscriptions/parameters('subscription_id')/providers/Microsoft.Web/locations/westus/managedApis/cognitiveservicescustomvision"
                             },
                             "documentdb_1": {
                                 "connectionId": "[resourceId('Microsoft.Web/connections', parameters('connections_documentdb_1_name'))]",
                                 "connectionName": "documentdb-1",
-                                "id": "/subscriptions/a4a18cdf-4006-44b4-855d-6cb58f8ae486/providers/Microsoft.Web/locations/westus/managedApis/documentdb"
+                                "id": "/subscriptions/parameters('subscription_id')/providers/Microsoft.Web/locations/westus/managedApis/documentdb"
                             },
                             "formrecognizer": {
                                 "connectionId": "[resourceId('Microsoft.Web/connections', parameters('connections_formrecognizer_name'))]",
                                 "connectionName": "formrecognizer",
-                                "id": "/subscriptions/a4a18cdf-4006-44b4-855d-6cb58f8ae486/providers/Microsoft.Web/locations/westus/managedApis/formrecognizer"
+                                "id": "/subscriptions/parameters('subscription_id')/providers/Microsoft.Web/locations/westus/managedApis/formrecognizer"
                             }
                         }
                     }
@@ -5568,22 +5571,22 @@
                             "azureblob_2": {
                                 "connectionId": "[resourceId('Microsoft.Web/connections', parameters('connections_azureblob_5_name'))]",
                                 "connectionName": "azureblob-5",
-                                "id": "/subscriptions/a4a18cdf-4006-44b4-855d-6cb58f8ae486/providers/Microsoft.Web/locations/westus/managedApis/azureblob"
+                                "id": "/subscriptions/parameters('subscription_id')/providers/Microsoft.Web/locations/westus/managedApis/azureblob"
                             },
                             "cognitiveservicescustomvision": {
                                 "connectionId": "[resourceId('Microsoft.Web/connections', parameters('connections_cognitiveservicescustomvision_2_name'))]",
                                 "connectionName": "cognitiveservicescustomvision-2",
-                                "id": "/subscriptions/a4a18cdf-4006-44b4-855d-6cb58f8ae486/providers/Microsoft.Web/locations/westus/managedApis/cognitiveservicescustomvision"
+                                "id": "/subscriptions/parameters('subscription_id')/providers/Microsoft.Web/locations/westus/managedApis/cognitiveservicescustomvision"
                             },
                             "documentdb_1": {
                                 "connectionId": "[resourceId('Microsoft.Web/connections', parameters('connections_documentdb_1_name'))]",
                                 "connectionName": "documentdb-1",
-                                "id": "/subscriptions/a4a18cdf-4006-44b4-855d-6cb58f8ae486/providers/Microsoft.Web/locations/westus/managedApis/documentdb"
+                                "id": "/subscriptions/parameters('subscription_id')/providers/Microsoft.Web/locations/westus/managedApis/documentdb"
                             },
                             "formrecognizer": {
                                 "connectionId": "[resourceId('Microsoft.Web/connections', parameters('connections_formrecognizer_name'))]",
                                 "connectionName": "formrecognizer",
-                                "id": "/subscriptions/a4a18cdf-4006-44b4-855d-6cb58f8ae486/providers/Microsoft.Web/locations/westus/managedApis/formrecognizer"
+                                "id": "/subscriptions/parameters('subscription_id')/providers/Microsoft.Web/locations/westus/managedApis/formrecognizer"
                             }
                         }
                     }
