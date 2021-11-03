@@ -9,7 +9,7 @@
             "type": "String"
         },
         "sites_app478816_name": {
-            "defaultValue": "app478816",
+            "defaultValue": "app_name",
             "type": "String"
         },
         "workflows_test1_name": {
@@ -49,7 +49,7 @@
             "type": "String"
         },
         "workflows_logicapp478816_name": {
-            "defaultValue": "logicapp478816",
+            "defaultValue": "logicapp_name",
             "type": "String"
         },
         "connections_formrecognizer_name": {
@@ -57,27 +57,27 @@
             "type": "String"
         },
         "serverfarms_app_plan478816_name": {
-            "defaultValue": "app-plan478816",
+            "defaultValue": "app_plan_name",
             "type": "String"
         },
         "searchServices_search478816_name": {
-            "defaultValue": "search478816",
+            "defaultValue": "search_app_name",
             "type": "String"
         },
         "storageAccounts_adls478816_name": {
-            "defaultValue": "adls478816",
+            "defaultValue": "storage_app_name",
             "type": "String"
         },
         "accounts_formrec478816_name": {
-            "defaultValue": "formrec478816",
+            "defaultValue": "form_rec_app_name",
             "type": "String"
         },
         "databaseAccounts_cosmos478816_name": {
-            "defaultValue": "cosmos478816",
+            "defaultValue": "cosmos_app_name",
             "type": "String"
         },
         "accounts_customvis478816_name": {
-            "defaultValue": "customvis478816",
+            "defaultValue": "custom_vis_app_name",
             "type": "String"
         },
         "connections_cognitiveservicescustomvision_name": {
@@ -93,7 +93,7 @@
             "type": "String"
         },
         "accounts_customvis478816prediction_name": {
-            "defaultValue": "customvis478816prediction",
+            "defaultValue": "custom_vis_endpoint_name",
             "type": "String"
         }
     },
