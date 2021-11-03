@@ -2,12 +2,6 @@
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "botServices_bot478816_endpoint": {
-            "type": "SecureString"
-        },
-        "channels_WebChatChannel_enablePreview": {
-            "type": "Bool"
-        },
         "databaseAccounts_cosmos478816_createMode": {
             "type": "SecureString"
         },
@@ -61,14 +55,6 @@
         },
         "serverfarms_app_plan478816_name": {
             "defaultValue": "app-plan478816",
-            "type": "String"
-        },
-        "botServices_bot478816_name": {
-            "defaultValue": "bot478816",
-            "type": "String"
-        },
-        "vaults_bot_secrets_478816_name": {
-            "defaultValue": "bot-secrets-478816",
             "type": "String"
         },
         "searchServices_search478816_name": {
@@ -245,32 +231,6 @@
                     "enableFullTextQuery": "None"
                 },
                 "createMode": "[parameters('databaseAccounts_cosmos478816_createMode')]"
-            }
-        },
-        {
-            "type": "Microsoft.KeyVault/vaults",
-            "apiVersion": "2021-06-01-preview",
-            "name": "[parameters('vaults_bot_secrets_478816_name')]",
-            "location": "westus",
-            "tags": {
-                "DeploymentId": "478816",
-                "LaunchId": "18578",
-                "LaunchType": "ON_DEMAND_LAB",
-                "TemplateId": "3916",
-                "TenantId": "277"
-            },
-            "properties": {
-                "sku": {
-                    "family": "A",
-                    "name": "Standard"
-                },
-                "tenantId": "0b9d902d-e3c1-48f1-8979-365832b339dd",
-                "accessPolicies": [],
-                "enabledForDeployment": false,
-                "enabledForTemplateDeployment": true,
-                "enableSoftDelete": true,
-                "vaultUri": "[concat('https://', parameters('vaults_bot_secrets_478816_name'), '.vault.azure.net/')]",
-                "provisioningState": "Succeeded"
             }
         },
         {
@@ -853,27 +813,6 @@
                 "targetWorkerCount": 0,
                 "targetWorkerSizeId": 0,
                 "zoneRedundant": false
-            }
-        },
-        {
-            "type": "Microsoft.BotService/botServices/channels",
-            "apiVersion": "2021-05-01-preview",
-            "name": "[concat(parameters('botServices_bot478816_name'), '/WebChatChannel')]",
-            "location": "global",
-            "dependsOn": [
-                "[resourceId('Microsoft.BotService/botServices', parameters('botServices_bot478816_name'))]"
-            ],
-            "properties": {
-                "properties": {
-                    "sites": [
-                        {
-                            "siteName": "Default Site",
-                            "isEnabled": true,
-                            "enablePreview": "[parameters('channels_WebChatChannel_enablePreview')]"
-                        }
-                    ]
-                },
-                "channelName": "WebChatChannel"
             }
         },
         {
