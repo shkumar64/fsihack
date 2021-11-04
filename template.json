@@ -9,6 +9,10 @@
             "defaultValue": "test1",
             "type": "String"
         },
+        "connections_formrecognizer_name": {
+            "defaultValue": "formrecognizer",
+            "type": "String"
+        },
         "connections_azureblob_name": {
             "defaultValue": "azureblob",
             "type": "String"
