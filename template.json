@@ -2,9 +2,6 @@
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "databaseAccounts_cosmos478816_createMode": {
-            "type": "SecureString"
-        },
         "subscription_id": {
             "type": "String"
         },
@@ -225,7 +222,7 @@
                 "diagnosticLogSettings": {
                     "enableFullTextQuery": "None"
                 },
-                "createMode": "[parameters('databaseAccounts_cosmos478816_createMode')]"
+                "createMode": "Default"
             }
         },
         {
@@ -1357,9 +1354,6 @@
                 "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_adls478816_name'))]"
             ],
             "properties": {
-                "immutableStorageWithVersioning": {
-                    "enabled": false
-                },
                 "defaultEncryptionScope": "$account-encryption-key",
                 "denyEncryptionScopeOverride": false,
                 "publicAccess": "Container"
@@ -1374,9 +1368,6 @@
                 "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_adls478816_name'))]"
             ],
             "properties": {
-                "immutableStorageWithVersioning": {
-                    "enabled": false
-                },
                 "defaultEncryptionScope": "$account-encryption-key",
                 "denyEncryptionScopeOverride": false,
                 "publicAccess": "Container"
@@ -1391,9 +1382,6 @@
                 "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_adls478816_name'))]"
             ],
             "properties": {
-                "immutableStorageWithVersioning": {
-                    "enabled": false
-                },
                 "defaultEncryptionScope": "$account-encryption-key",
                 "denyEncryptionScopeOverride": false,
                 "publicAccess": "Container"
@@ -1408,9 +1396,6 @@
                 "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_adls478816_name'))]"
             ],
             "properties": {
-                "immutableStorageWithVersioning": {
-                    "enabled": false
-                },
                 "defaultEncryptionScope": "$account-encryption-key",
                 "denyEncryptionScopeOverride": false,
                 "publicAccess": "Container"
@@ -1425,9 +1410,6 @@
                 "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_adls478816_name'))]"
             ],
             "properties": {
-                "immutableStorageWithVersioning": {
-                    "enabled": false
-                },
                 "defaultEncryptionScope": "$account-encryption-key",
                 "denyEncryptionScopeOverride": false,
                 "publicAccess": "Container"
@@ -1442,9 +1424,6 @@
                 "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_adls478816_name'))]"
             ],
             "properties": {
-                "immutableStorageWithVersioning": {
-                    "enabled": false
-                },
                 "defaultEncryptionScope": "$account-encryption-key",
                 "denyEncryptionScopeOverride": false,
                 "publicAccess": "Container"
