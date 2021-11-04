@@ -3,6 +3,11 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "subscription_id": {
+            "defaultValue": "required_subscription_id",
+            "type": "String"
+        },
+        "workflows_logicapp_name": {
+            "defaultValue": "required_new_logicapp_name",
             "type": "String"
         },
         "connections_formrecognizer_name": {
@@ -39,10 +44,6 @@
         },
         "connections_documentdb_1_name": {
             "defaultValue": "documentdb-1",
-            "type": "String"
-        },
-        "workflows_logicapp478816_name": {
-            "defaultValue": "logicapp_name",
             "type": "String"
         },
         "connections_cognitiveservicescustomvision_name": {
@@ -533,7 +534,7 @@
         {
             "type": "Microsoft.Logic/workflows",
             "apiVersion": "2017-07-01",
-            "name": "[parameters('workflows_logicapp478816_name')]",
+            "name": "[parameters('workflows_logicapp_name')]",
             "location": "westus",
             "dependsOn": [
                 "[resourceId('Microsoft.Web/connections', parameters('connections_azureblob_5_name'))]",
